@@ -1,0 +1,90 @@
+{
+  "status": "offline_code_validation_only",
+  "date": "2026-11-13",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "available_modules": {
+    "numpy": true,
+    "torch": false,
+    "transformers": false,
+    "safetensors": false
+  },
+  "syntax_compile_passed": [
+    "architecture_budget.py",
+    "calibrate_ffn.py",
+    "import_chat_history.py",
+    "memory_prefix.py",
+    "qwen_ffn_prune.py",
+    "test_import_chat_history.py",
+    "test_qwen_ffn_prune.py",
+    "test_training_data.py",
+    "train_memory_prefix.py"
+  ],
+  "cli_help_checks": {
+    "calibrate_ffn.py": {
+      "exit_code": 0
+    },
+    "train_memory_prefix.py": {
+      "exit_code": 0
+    },
+    "qwen_ffn_prune.py": {
+      "exit_code": 0
+    },
+    "architecture_budget.py": {
+      "exit_code": 0
+    }
+  },
+  "unit_tests": {
+    "run": 33,
+    "passed": 33,
+    "failed": 0,
+    "scope": "14 source-preserving chat importer tests, 15 synthetic tensor/file pruning tests, 4 training-split correctness tests",
+    "log": "unit_tests.txt"
+  },
+  "demo_jsonl": {
+    "train_rows": 12,
+    "eval_rows": 8,
+    "chronology_check": "passed",
+    "source_kind": "synthetic_not_user_history",
+    "calibration_rows": 12,
+    "scope": "synthetic work and whole-life scenarios; not real user history"
+  },
+  "not_run": [
+    "pretrained_Qwen_loading",
+    "real_model_forward",
+    "GPU_calibration",
+    "memory_tensor_forward_or_gradient",
+    "pruning_recovery_training",
+    "memory_module_training",
+    "personal_LoRA_training",
+    "real_personal_data_generation_evaluation",
+    "deployment"
+  ],
+  "weights_in_deliverable": false,
+  "personal_model_trained": false,
+  "version": "0.2",
+  "script_checks": {
+    "preflight_server.sh": {
+      "bash_syntax_exit_code": 0,
+      "embedded_python_ast": "passed",
+      "help_exit_code": 0,
+      "real_gpu_run": false
+    },
+    "run_on_gpu1.sh": {
+      "bash_syntax_exit_code": 0,
+      "embedded_python_ast": "passed",
+      "help_exit_code": 0,
+      "real_gpu_run": false
+    }
+  },
+  "server_simulation_checks": {
+    "count": 11,
+    "passed": 11,
+    "run_by": "collaborating_reviewer",
+    "scope": "mocked GPU queries, read-only preflight and no-execution dry-run",
+    "real_remote_connection": false,
+    "real_gpu_training": false
+  },
+  "full_chat_export_obtained": false,
+  "script_checks_note": "Public scripts contain no preset personal server identity; real preflight output is private."
+}

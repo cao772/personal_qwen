@@ -1,0 +1,86 @@
+{
+  "status": "design_and_offline_code_only",
+  "created_at": "2026-11-13",
+  "base_model": "Qwen/Qwen3-1.7B",
+  "base_model_revision": "not_downloaded_not_pinned_yet",
+  "reference_config_source": "https://huggingface.co/Qwen/Qwen3-1.7B/raw/main/config.json",
+  "pruning": {
+    "type": "structured_ffn_channels",
+    "candidate_intermediate_sizes": [
+      6144,
+      5376,
+      4608
+    ],
+    "preserve": [
+      "hidden_size",
+      "num_hidden_layers",
+      "num_attention_heads",
+      "num_key_value_heads",
+      "embedding",
+      "normalization"
+    ],
+    "included_ranker": "weight_l2_demonstration_only",
+    "task_calibrated_ranker": "activation_weight_energy_implemented_not_run_on_pretrained_model",
+    "recovery_training": "required_for_quality_evaluation_not_implemented"
+  },
+  "memory": {
+    "type": "query_conditioned_soft_prefix",
+    "candidate_slots": [
+      8,
+      16
+    ],
+    "reader_dim": 128,
+    "encoder": "frozen_base_input_embedding_mean_pool_experimental",
+    "training_status": "not_started",
+    "capacity": "bounded_soft_prefix_lossy",
+    "exact_history": "retain_source_records_outside_adapter",
+    "not_a_reproduction_of": "Memorilla",
+    "default_slots": 8
+  },
+  "personalization": {
+    "status": "whole_life_scope_and_synthetic_examples_only_no_user_history_exported",
+    "lora_training": "planned_not_implemented",
+    "evolving_facts": "versioned_source_memory_not_only_weights"
+  },
+  "comparison_groups": [
+    "unpruned_base",
+    "pruned_base_after_recovery",
+    "unpruned_base_plus_trained_memory",
+    "pruned_base_after_recovery_plus_realigned_memory"
+  ],
+  "evaluation_axes": [
+    "held_out_personal_task_accuracy",
+    "post_training_new_fact_recall",
+    "superseded_fact_resolution",
+    "cross_project_contamination",
+    "critical_constraint_omission",
+    "unsupported_memory_claims",
+    "generation_latency",
+    "peak_device_memory",
+    "total_system_storage",
+    "subject_and_speaker_attribution",
+    "fiction_and_quotation_distinction",
+    "context_specific_style",
+    "temporary_emotion_vs_enduring_preference"
+  ],
+  "gates": [
+    "Choose pruning level only after target-task and basic-language evaluation",
+    "Re-align memory after backbone change",
+    "No claim of infinite lossless memory",
+    "Synthetic shape tests are not pretrained Qwen inference or personalized quality evaluation"
+  ],
+  "scope": {
+    "domains": [
+      "daily_life",
+      "relationships",
+      "experiences",
+      "communication",
+      "contextual_personality_expression",
+      "preferences",
+      "learning",
+      "work"
+    ],
+    "sources": "all_supplied_chat_records_with_originals_roles_branches_and_times_preserved",
+    "full_account_export_obtained": false
+  }
+}

@@ -1,0 +1,8 @@
+{"timestamp": "2001-02-01T01:00:00Z", "question": "项目丁当前验收编号是什么？", "answer": "项目丁当前验收编号是 D-7294。", "memories": ["项目戊的编号为 E-9231。", "2001-02-01 项目丁：验收编号 D-7294。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-02T01:00:00Z", "question": "项目己最终使用哪种格式？", "answer": "项目己最终使用 XLSX。", "memories": ["2001-02-01 项目己拟使用 TXT。", "2001-02-02 项目己确认改用 XLSX，替代 TXT。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-03T01:00:00Z", "question": "项目庚已验证真实接口了吗？", "answer": "没有，只有模拟接口通过，真实接口尚未验证。", "memories": ["项目庚模拟接口验证通过。", "项目庚真实接口尚未验证。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-04T01:00:00Z", "question": "项目辛服务器有多少内存？", "answer": "当前记录没有提供项目辛服务器的内存容量。", "memories": ["项目辛服务器配置尚未提供。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-05T01:00:00Z", "question": "学习概念时示例用户现在希望怎样解释？", "answer": "先举一个具体例子，再给定义。", "memories": ["2001-01 合成用户：讲概念时先给定义。", "2001-02-05 合成用户：以后学习新概念先给具体例子，再给定义，替换旧顺序。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-06T01:00:00Z", "question": "示例用户是否已经买了相机？", "answer": "没有已购买的证据。助手只推荐过相机，用户仍在比较。", "memories": ["助手推荐了示例相机 M-6719。", "合成用户：我还在比较，没有决定买哪台。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-07T01:00:00Z", "question": "谁不喜欢香菜？", "answer": "示例姐姐不喜欢香菜；记录没有说明用户自己的偏好。", "memories": ["合成用户：我姐姐不喜欢香菜，聚餐给她单独留一份。"], "source_kind": "synthetic_demonstration_not_user_history"}
+{"timestamp": "2001-02-08T01:00:00Z", "question": "示例用户以后都要一句话回复吗？", "answer": "没有。只限那天赶车时临时要求简短。", "memories": ["2001-02-08 合成用户：我现在赶车，今天这几个问题先一句话回答。"], "source_kind": "synthetic_demonstration_not_user_history"}

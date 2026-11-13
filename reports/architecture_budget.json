@@ -1,0 +1,66 @@
+{
+  "status": "analytical_config_budget_not_actual_checkpoint_or_performance",
+  "config": "qwen3_1_7b_config_reference.json",
+  "assumptions": [
+    "Standard dense Qwen3, three bias-free FFN matrices per layer",
+    "Q/K RMSNorm parameters shared across heads, matching standard implementation",
+    "Only FFN intermediate channels change; all other dimensions fixed",
+    "Raw weight bytes exclude tensor headers, quantization scales, caches, activations, optimizer and memory module",
+    "Parameter reduction is not a measured latency improvement or capability preservation result"
+  ],
+  "base": {
+    "intermediate_size": 6144,
+    "parameters": 1720574976,
+    "embedding_parameters": 311164928,
+    "additional_untied_lm_head_parameters": 0,
+    "attention_parameters": 352321536,
+    "ffn_parameters": 1056964608,
+    "norm_parameters": 123904,
+    "raw_bf16_weight_bytes": 3441149952,
+    "raw_int4_weight_bytes_ideal": 860287488.0
+  },
+  "candidates": [
+    {
+      "intermediate_size": 6144,
+      "parameters": 1720574976,
+      "embedding_parameters": 311164928,
+      "additional_untied_lm_head_parameters": 0,
+      "attention_parameters": 352321536,
+      "ffn_parameters": 1056964608,
+      "norm_parameters": 123904,
+      "raw_bf16_weight_bytes": 3441149952,
+      "raw_int4_weight_bytes_ideal": 860287488.0,
+      "removed_parameters": 0,
+      "parameter_reduction_percent": 0.0,
+      "ffn_channel_reduction_percent": 0.0
+    },
+    {
+      "intermediate_size": 5376,
+      "parameters": 1588454400,
+      "embedding_parameters": 311164928,
+      "additional_untied_lm_head_parameters": 0,
+      "attention_parameters": 352321536,
+      "ffn_parameters": 924844032,
+      "norm_parameters": 123904,
+      "raw_bf16_weight_bytes": 3176908800,
+      "raw_int4_weight_bytes_ideal": 794227200.0,
+      "removed_parameters": 132120576,
+      "parameter_reduction_percent": 7.678861882970917,
+      "ffn_channel_reduction_percent": 12.5
+    },
+    {
+      "intermediate_size": 4608,
+      "parameters": 1456333824,
+      "embedding_parameters": 311164928,
+      "additional_untied_lm_head_parameters": 0,
+      "attention_parameters": 352321536,
+      "ffn_parameters": 792723456,
+      "norm_parameters": 123904,
+      "raw_bf16_weight_bytes": 2912667648,
+      "raw_int4_weight_bytes_ideal": 728166912.0,
+      "removed_parameters": 264241152,
+      "parameter_reduction_percent": 15.357723765941834,
+      "ffn_channel_reduction_percent": 25.0
+    }
+  ]
+}

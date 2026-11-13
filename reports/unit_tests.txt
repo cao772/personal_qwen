@@ -1,0 +1,38 @@
+test_all_branches_roles_missing_times_and_raw_content (test_import_chat_history.ImportHistoryTests.test_all_branches_roles_missing_times_and_raw_content) ... ok
+test_ambiguous_zip_candidates_fail (test_import_chat_history.ImportHistoryTests.test_ambiguous_zip_candidates_fail) ... ok
+test_duplicate_conversation_id_fails (test_import_chat_history.ImportHistoryTests.test_duplicate_conversation_id_fails) ... ok
+test_duplicate_json_mapping_key_fails_without_silent_overwrite (test_import_chat_history.ImportHistoryTests.test_duplicate_json_mapping_key_fails_without_silent_overwrite) ... ok
+test_duplicate_message_id_fails (test_import_chat_history.ImportHistoryTests.test_duplicate_message_id_fails) ... ok
+test_existing_output_is_never_overwritten (test_import_chat_history.ImportHistoryTests.test_existing_output_is_never_overwritten) ... ok
+test_invalid_ids_and_node_id_mismatch_fail (test_import_chat_history.ImportHistoryTests.test_invalid_ids_and_node_id_mismatch_fail) ... ok
+test_json_limit_fails_instead_of_truncating (test_import_chat_history.ImportHistoryTests.test_json_limit_fails_instead_of_truncating) ... ok
+test_output_permissions_and_umask_restoration (test_import_chat_history.ImportHistoryTests.test_output_permissions_and_umask_restoration) ... ok
+test_source_pointer_escapes_opaque_node_id (test_import_chat_history.ImportHistoryTests.test_source_pointer_escapes_opaque_node_id) ... ok
+test_source_unchanged_and_complete_copy_hash (test_import_chat_history.ImportHistoryTests.test_source_unchanged_and_complete_copy_hash) ... ok
+test_unknown_current_path_preserves_every_node (test_import_chat_history.ImportHistoryTests.test_unknown_current_path_preserves_every_node) ... ok
+test_zip_is_preserved_without_extracting_paths (test_import_chat_history.ImportHistoryTests.test_zip_is_preserved_without_extracting_paths) ... ok
+test_zip_json_limit_is_enforced (test_import_chat_history.ImportHistoryTests.test_zip_json_limit_is_enforced) ... ok
+test_calibration_rejects_different_weights_with_identical_config (test_qwen_ffn_prune.PruningTests.test_calibration_rejects_different_weights_with_identical_config) ... ok
+test_chunk_boundaries_produce_identical_checkpoint_bytes (test_qwen_ffn_prune.PruningTests.test_chunk_boundaries_produce_identical_checkpoint_bytes) ... ok
+test_cropped_ffn_equals_original_with_removed_channels_masked (test_qwen_ffn_prune.PruningTests.test_cropped_ffn_equals_original_with_removed_channels_masked) ... ok
+test_default_crop_and_cli_are_dry_run (test_qwen_ffn_prune.PruningTests.test_default_crop_and_cli_are_dry_run) ... ok
+test_external_calibration_drives_selection_and_provenance (test_qwen_ffn_prune.PruningTests.test_external_calibration_drives_selection_and_provenance) ... ok
+test_external_calibration_rejects_wrong_identity_dimensions_and_values (test_qwen_ffn_prune.PruningTests.test_external_calibration_rejects_wrong_identity_dimensions_and_values) ... ok
+test_f16_and_bf16_preserve_raw_retained_values (test_qwen_ffn_prune.PruningTests.test_f16_and_bf16_preserve_raw_retained_values) ... ok
+test_inspect_and_plan_counts_are_actual_stored_elements (test_qwen_ffn_prune.PruningTests.test_inspect_and_plan_counts_are_actual_stored_elements) ... ok
+test_invalid_header_and_nonfinite_weights_rejected (test_qwen_ffn_prune.PruningTests.test_invalid_header_and_nonfinite_weights_rejected) ... ok
+test_invalid_target_rejected (test_qwen_ffn_prune.PruningTests.test_invalid_target_rejected) ... ok
+test_output_must_be_new_and_outside_source (test_qwen_ffn_prune.PruningTests.test_output_must_be_new_and_outside_source) ... ok
+test_three_projections_crop_together_config_and_source_preserved (test_qwen_ffn_prune.PruningTests.test_three_projections_crop_together_config_and_source_preserved) ... ok
+test_ties_have_stable_channel_order (test_qwen_ffn_prune.PruningTests.test_ties_have_stable_channel_order) ... ok
+test_unsupported_config_and_shards_fail_fast (test_qwen_ffn_prune.PruningTests.test_unsupported_config_and_shards_fail_fast) ... ok
+test_unsupported_dtype_bias_and_shape_rejected (test_qwen_ffn_prune.PruningTests.test_unsupported_dtype_bias_and_shape_rejected) ... ok
+test_answer_edit_cannot_hide_duplicate_inputs (test_training_data.TrainingSplitTests.test_answer_edit_cannot_hide_duplicate_inputs) ... ok
+test_chronology_uses_utc_not_lexical_timestamp (test_training_data.TrainingSplitTests.test_chronology_uses_utc_not_lexical_timestamp) ... ok
+test_future_training_record_is_rejected (test_training_data.TrainingSplitTests.test_future_training_record_is_rejected) ... ok
+test_timezone_is_required (test_training_data.TrainingSplitTests.test_timezone_is_required) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.147s
+
+OK

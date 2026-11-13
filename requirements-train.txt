@@ -1,0 +1,4 @@
+-r requirements-prune.txt
+torch>=2.5,<3
+transformers>=4.51,<5
+safetensors>=0.4,<1
