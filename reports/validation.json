@@ -13,9 +13,11 @@
     "architecture_budget.py",
     "calibrate_ffn.py",
     "import_chat_history.py",
+    "import_tracememo.py",
     "memory_prefix.py",
     "qwen_ffn_prune.py",
     "test_import_chat_history.py",
+    "test_import_tracememo.py",
     "test_qwen_ffn_prune.py",
     "test_training_data.py",
     "train_memory_prefix.py"
@@ -35,10 +37,10 @@
     }
   },
   "unit_tests": {
-    "run": 33,
-    "passed": 33,
+    "run": 45,
+    "passed": 45,
     "failed": 0,
-    "scope": "14 source-preserving chat importer tests, 15 synthetic tensor/file pruning tests, 4 training-split correctness tests",
+    "scope": "12 TraceMemo source/speaker/quote import tests, 14 ChatGPT source/branch import tests, 15 synthetic tensor/file pruning tests, 4 training-split correctness tests",
     "log": "unit_tests.txt"
   },
   "demo_jsonl": {
@@ -62,7 +64,7 @@
   ],
   "weights_in_deliverable": false,
   "personal_model_trained": false,
-  "version": "0.2",
+  "version": "0.3",
   "script_checks": {
     "preflight_server.sh": {
       "bash_syntax_exit_code": 0,
@@ -86,5 +88,6 @@
     "real_gpu_training": false
   },
   "full_chat_export_obtained": false,
-  "script_checks_note": "Public scripts contain no preset personal server identity; real preflight output is private."
+  "script_checks_note": "Public scripts contain no preset personal server identity; real preflight output is private.",
+  "private_source_verification": "Any real source processing results are stored privately and are not part of these public synthetic tests."
 }

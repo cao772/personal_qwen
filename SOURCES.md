@@ -10,6 +10,8 @@
 6. Memorilla 论文与项目： https://arxiv.org/abs/2610.21375 ， https://memory.stanford.edu/
 7. Memorilla 官方训练工程： https://github.com/snap-stanford/memorilla
 8. LoRA： https://arxiv.org/abs/2106.09685
+9. OpenAI 的 ChatGPT 记忆说明（摘要与完整原文的区别）： https://help.openai.com/en/articles/8590148-memory-in-chatgpt
+10. OpenAI 的 ChatGPT/Codex 记忆存储与本地记忆说明： https://learn.chatgpt.com/docs/customization/memories
 
 ## 本包与这些工作的关系
 

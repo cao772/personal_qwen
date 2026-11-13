@@ -10,6 +10,7 @@ venv/
 *.p12
 credentials*.json
 private/
+private_qwen_ingest/
 raw/
 exports/
 datasets/
@@ -30,6 +31,10 @@ logs/
 *.gguf
 *.zip
 conversations*.json
+messages.jsonl
+records.jsonl
+source_original.json
+source_original.jsonl
 chat.html
 data/*
 !data/README.md

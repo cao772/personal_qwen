@@ -1,6 +1,6 @@
 # 个人 Qwen：全生活记忆、个性化与结构裁剪实验
 
-版本：0.2，2026-11-13。
+版本：0.3，2026-11-13。
 
 ## 项目范围
 
@@ -50,8 +50,10 @@ Qwen/Qwen3-1.7B，标准纯文本 dense Qwen3。官方配置：28 层、隐藏�
 | memory_prefix.py | 查询条件化的神经记忆读取器、输入前缀拼接 | 语法；未张量前向 |
 | train_memory_prefix.py | 冻结底座，训练记忆侧模块 | 语法/CLI/数据划分检查；未训练 |
 | import_chat_history.py | 原样保留导出文件，索引全部消息与分支 | 合成导出测试；未导入真实历史 |
+| import_tracememo.py | 导入 TraceMemo 微信文字 JSONL/ZIP，区分本人、其他发言人和引用 | 合成测试；私有来源验证另存 |
 | scripts/ | 共享服务器只读预检与 GPU1 运行入口 | 离线检查；未连真实服务器 |
 | docs/whole_life_memory.md | 全生活数据范围、来源与时间规则、评测设计 | 设计；完整数据库尚未实现 |
+| docs/source_coverage.md | ChatGPT/Codex/微信来源覆盖差异与本机导出交接 | 来源说明与操作任务 |
 | experiment_plan.json | 候选结构、对照组、未完成项 | 设计 |
 | data/ | 工作与生活的合成格式示例 | 不是个人训练集 |
 | reports/ | 参数预算和实际验证记录 | 区分计算/测试/未运行 |
@@ -81,6 +83,18 @@ python import_chat_history.py --input /path/to/chatgpt-export.zip --output-dir /
 也接受直接提供 conversations.json。输出目录必须不存在，父目录须已存在。输出 source_original.zip/json、messages.jsonl 和 manifest.json，目录权限 700、文件权限 600。默认 JSON 读取上限 256 MiB，可用 --max-json-bytes 显式调整；超过上限报错，不截断。
 
 ZIP 保留整包但不解包附件，只读取唯一的 conversations.json；重名候选会拒绝。索引包括所有 mapping 节点和非当前分支，保留原始角色、时间、内容与来源指针。完整性仅针对这个输入文件，不能据此宣称整个账号已经全部导出。训练器不直接接受原始消息索引，需要后续整理为有来源和时间边界的样本。
+
+### 1b. 导入 TraceMemo 微信文字记录
+
+```bash
+python import_tracememo.py --input /path/to/wechat-text-export.zip --output-dir /path/to/private/new-wechat-import
+```
+
+也接受直接提供 messages.jsonl；ZIP 中必须恰有一个该文件。按行处理，保留原始输入及哈希，输出 records.jsonl 和 manifest.json。目录必须新建，权限为 700/600；默认总 JSONL 上限 1 GiB、单行 8 MiB、最多 100 万条，可显式调整对应参数。超限、重复消息标识或格式错误会报告失败，不静默截断或去重。
+
+字段包括 chat_id/chat_name/chat_type、sender/sender_id、is_self、带时区的 time、local_id/server_id、type/text，以及引用消息的 quoted_text。完整 parsed raw_record 和未知字段都保留，精确原字节以源文件为准。输出通过 is_self 区分 self/other；对方不是 assistant，引用也不能直接当作发送者本人的事实。空正文和空显示名继续保留并计数，不凭显示名猜身份。
+
+此导入结果不是 SFT 训练集。它没有提炼人格、决定哪些话应被模仿，或把原文写进模型权重。ChatGPT 的可见记忆、相关历史检索、账号导出、Codex 本地会话和生成记忆也分别登记，详见 [来源覆盖与交接](docs/source_coverage.md)。
 
 ### 2. 检查真实本地模型
 
@@ -129,7 +143,7 @@ python train_memory_prefix.py --model-dir /path/to/selected-local-Qwen --train-j
 
 ## 如何真正加入个人信息
 
-1. 原始聊天：通过 import_chat_history.py 导入本人提供的 ChatGPT JSON 或 ZIP。保存原文件副本和哈希，索引所有消息分支；文本索引不替代多模态内容或原始档案。其它聊天平台需增加对应格式适配器，目前没有自动账号全量导出能力。
+1. 原始聊天：通过 import_chat_history.py 导入本人提供的 ChatGPT JSON 或 ZIP，通过 import_tracememo.py 导入 TraceMemo 微信文字记录。保存原文件副本和哈希，保留消息身份和来源；文本索引不替代多模态内容或原始档案。其它聊天平台需增加对应格式适配器，目前没有自动账号全量导出能力。
 2. 稳定表达和协作方式：整理“请求—错误回答—纠正—最终接受版本”以及适用场景，用于个人适配。日常闲聊、倾诉、学习和工作分别标注，个人 LoRA 在本包中仅为后续设计。
 3. 新经历、人物、关系和动态进度：进入可更新、可追溯的源记录；问题发生后才出现的信息不能进入该问题的历史。不要从单次倾诉推定永久性格。
 4. 记忆使用能力：先学习从记录中找答案、处理更新/撤销、人物归属和证据不足，再用个人任务适配。少量个人记录无法保证从零训练出成熟记忆机制。
