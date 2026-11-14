@@ -40,3 +40,11 @@ data/*
 !data/README.md
 !data/*_demo.jsonl
 !data/*_example.json
+
+# Private retrieval evaluation files
+private_qwen_*/
+retrieval_runs/
+queries.jsonl
+evidence.jsonl
+retrieval.jsonl
+*retrieval_queries*.jsonl
