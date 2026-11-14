@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic factorial/bridge preparation and frozen reader-output binding audit",
+  "command": "python -B -m unittest -v test_format_controls test_format_bridge_controls test_format_run_audit",
+  "validation_kind": "CPU-only contracts; audit fixtures are fabricated output records, not model answers",
+  "tests": {
+    "test_format_controls": 10,
+    "test_format_bridge_controls": 6,
+    "test_format_run_audit": 8,
+    "total": 24,
+    "passed": 24,
+    "failed": 0
+  },
+  "synthetic_design": {
+    "scenarios": 8,
+    "matrix_inputs": 136,
+    "bridge_inputs": 24,
+    "total_inputs": 160,
+    "matrix_contrasts": 264,
+    "bridge_contrasts": 16
+  },
+  "frozen_input_manifests_sha256": {
+    "matrix": "0e017bda9ab6bf98965469ee3f6cc88a1735e57b2d50e205ceb1792489c7ea92",
+    "bridge": "d91cd95087f60c004eb62cbf04ee9c97f4b87bffecae31fe38ea8ff950270443"
+  },
+  "source_files_sha256": {
+    "experiments/format_controls.py": "6d64bc71833c892fb653ad53ae67fa3a8a3f15b33ff68d3d76d6f73cdf0eacf4",
+    "experiments/format_bridge_controls.py": "ae5ed63b280797701fc840d470b7d69f626adb75d3a19f8eff09700335a1ffba",
+    "audit_format_run.py": "0e27347deb6ac4298186cc5f17ab3f89480e10b7e4d0a36ddeb479175f4a1f11",
+    "experiments/evidence_reader.py": "f61cd69be33495206257a7afa743dec45c35fbe1051596504e46e1e0dbd7fda2",
+    "prepare_evidence_cases.py": "dafa8636c70533d7693617c0cdfdcd1d2e7585469f35dfffd161f4fe74854f81",
+    "experiments/evidence_packing.py": "961f83c7ad3836c90401bdfaccf33c387488f25f30b9fd242ef1ff2495919ba3"
+  },
+  "model_generation_run": false,
+  "tokenizer_loaded": false,
+  "training_run": false,
+  "answer_quality_evaluated": false,
+  "daily_default_changed": false,
+  "limits": [
+    "The variants share eight synthetic scenarios and are not independent personal-history acceptance cases.",
+    "The quote factor serializes multiple string fields together.",
+    "Legacy versus packer bridges change multiple presentation elements; only the paired packer display name is isolated.",
+    "CPU audit recomputes evidence/messages but cannot establish tokenizer/model/adapter/device identity or authentic execution."
+  ]
+}
