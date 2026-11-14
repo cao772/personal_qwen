@@ -1,0 +1,9 @@
+{
+  "scope": "Synthetic behavior tests only; real source retrieval and model response results are stored privately",
+  "tests": 37,
+  "passed": 35,
+  "expected_failures": 2,
+  "expected_failures_scope": "Unmodified frozen candidate A only; candidate B fixes both counterexamples",
+  "daily_runtime_changed": false,
+  "command": "python -B -m unittest -v test_archive_search_candidate_a test_evaluate_retrieval test_archive_retrieval_known_limits test_archive_search_candidate_b test_archive_retrieval_fixes test_archive_search_candidate_c test_semantic_retrieval"
+}

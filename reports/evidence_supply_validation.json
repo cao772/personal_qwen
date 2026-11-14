@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "Experimental fixed-source evidence preparation, evidence packing and reader input auditing",
+  "command": "python -B -m unittest -v test_evidence_packing test_prepare_evidence_cases test_evidence_reader_audit",
+  "validation_kind": "CPU-only synthetic unit checks; no model or tokenizer was loaded",
+  "tests": {
+    "test_evidence_packing": 10,
+    "test_prepare_evidence_cases": 7,
+    "test_evidence_reader_audit": 9,
+    "total": 26,
+    "passed": 26,
+    "failed": 0
+  },
+  "verified_contracts": [
+    "Fixed source and question fingerprint binding",
+    "Archive integrity and time/exclusion validation",
+    "Exact source spans and explicit omission ranges",
+    "Rendered evidence character-budget accounting",
+    "Research/chat prompt selection without mutable global state",
+    "Actual encoded input length and canonical fingerprints; explicit overflow rejection"
+  ],
+  "model_generation_run": false,
+  "answer_quality_evaluated_by_this_report": false,
+  "daily_default_changed": false,
+  "limitations": [
+    "Synthetic checks do not establish retrieval recall or answer quality.",
+    "Unicode character budgets are not model-token budgets.",
+    "Additional source/author formatting can displace text in small budgets.",
+    "The packer remains experimental; a larger budget is a separate comparison."
+  ],
+  "implementation_sha256": {
+    "prepare_evidence_cases.py": "dafa8636c70533d7693617c0cdfdcd1d2e7585469f35dfffd161f4fe74854f81",
+    "experiments/evidence_packing.py": "961f83c7ad3836c90401bdfaccf33c387488f25f30b9fd242ef1ff2495919ba3",
+    "experiments/evidence_reader.py": "f61cd69be33495206257a7afa743dec45c35fbe1051596504e46e1e0dbd7fda2"
+  }
+}

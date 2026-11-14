@@ -1,0 +1,18 @@
+{
+  "scope": "Synthetic archive retrieval and evaluator checks only",
+  "command": "python -B -m unittest -v test_archive_search_candidate_a test_evaluate_retrieval test_archive_retrieval_known_limits",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "tests_run": 20,
+  "passed": 18,
+  "expected_failures": 2,
+  "unexpected_failures": 0,
+  "candidate_status": "Frozen negative result, not a daily default",
+  "expected_failure_reasons": [
+    "Activity date can be misread as message date when record-related words appear elsewhere.",
+    "Merged context can exceed the declared horizon from its retained anchor."
+  ],
+  "model_generation_run": false,
+  "deployment_performed": false,
+  "private_evaluation_location": "Stored separately in private project records; no real data or scores included here."
+}
