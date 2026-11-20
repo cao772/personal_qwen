@@ -1,0 +1,28 @@
+{
+  "model_id": "openbmb/MiniCPM5-2B",
+  "revision": "42433e90dad95123ab87729fd7011e7110629556",
+  "snapshot_path": "models/minicpm5-2b",
+  "data_dir": "data",
+  "output_dir": "results/minicpm5",
+  "seed": 214,
+  "epochs": 2,
+  "learning_rate": 5e-06,
+  "weight_decay": 0.0,
+  "accumulation": 8,
+  "max_sequence_tokens": 2048,
+  "max_new_tokens": 2048,
+  "eval_seeds": [
+    214,
+    215,
+    216
+  ],
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "repetition_penalty": 1.0,
+  "enable_thinking": true,
+  "evaluation_files": [
+    "regression.jsonl",
+    "synthetic-eval.jsonl"
+  ]
+}
